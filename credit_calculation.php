@@ -1,6 +1,7 @@
 <?php
 
 error_reporting(-1);
+mb_internal_encoding('utf-8');
 
 function getCreditResult($creditSum, $payout, $percent, $comission, $oneTimeComission) {
     
