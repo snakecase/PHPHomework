@@ -1,8 +1,8 @@
 <?php
-
+ 
 error_reporting(-1);
 mb_internal_encoding('utf-8');
-
+ 
 function getCreditResult($creditSum, $payout, $percent, $comission, $oneTimeComission) {
     
     $creditSum += $oneTimeComission;
@@ -26,15 +26,15 @@ function getCreditResult($creditSum, $payout, $percent, $comission, $oneTimeComi
         "month"     =>  $month
         );
 }
-
+ 
 $creditSum = 76000;
 $payout = 9000;
-
+ 
 $homeCredit = getCreditResult($creditSum, $payout, 1.07, 700, 0);
 $softbank = getCreditResult($creditSum, $payout, 1.05, 1200, 0);
 $strawberryBank = getCreditResult($creditSum, $payout, 1.02, 0, 8000);
-
-echo "Сумма кредита: {$creditSum}.\n";
-echo "Банк: homeCredit. К выплате: {$homeCredit['result']} руб. Срок рассрочки: {$homeCredit['month']} мес.\n";
-echo "Банк: softbank. К выплате: {$softbank['result']} руб. Срок рассрочки: {$softbank['month']} мес.\n";
-echo "Банк: strawberryBank. К выплате: {$strawberryBank['result']} руб. Срок рассрочки: {$strawberryBank['month']} мес.\n";
+ 
+echo "РЎСѓРјРјР° РєСЂРµРґРёС‚Р°: {$creditSum}.\n";
+echo "Р‘Р°РЅРє: homeCredit. Рљ РІС‹РїР»Р°С‚Рµ: {$homeCredit['result']} СЂСѓР±. РЎСЂРѕРє СЂР°СЃСЃСЂРѕС‡РєРё: {$homeCredit['month']} РјРµСЃ.\n";
+echo "Р‘Р°РЅРє: softbank. Рљ РІС‹РїР»Р°С‚Рµ: {$softbank['result']} СЂСѓР±. РЎСЂРѕРє СЂР°СЃСЃСЂРѕС‡РєРё: {$softbank['month']} РјРµСЃ.\n";
+echo "Р‘Р°РЅРє: strawberryBank. Рљ РІС‹РїР»Р°С‚Рµ: {$strawberryBank['result']} СЂСѓР±. РЎСЂРѕРє СЂР°СЃСЃСЂРѕС‡РєРё: {$strawberryBank['month']} РјРµСЃ.\n";
